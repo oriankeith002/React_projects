@@ -15,6 +15,7 @@ const NewExpense = (props) => {
 
         console.log(expenseData);
         
+        props.onAddExpense(expenseData); // passing data to App.js via props
 
     };
 
