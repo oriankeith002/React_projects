@@ -23,8 +23,25 @@ const ExpenseForm = () => {
     };
 
 
+    const submitHandler = event => {
+        event.preventDefault();
+
+        // making object that will contain our data that will be stored.
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate),
+        };
+
+        console.log(expenseData);
+
+
+    };
+
+
+
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
