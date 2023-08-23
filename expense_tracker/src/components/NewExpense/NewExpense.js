@@ -3,10 +3,25 @@ import './NewExpense.css';
 import ExpenseForm from './ExpenseForm'
 
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+
+    // enterExpenseData as an agrument
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random.toString()
+        };
+
+        console.log(expenseData);
+        
+
+    };
+
     return (
             <div className="new-expense">
-                <ExpenseForm />
+                {/* new custom prop (onSaveExpenseDate) pointing to event listener function */}
+                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} /> 
             </div>
         );
 };
