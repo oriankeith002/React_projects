@@ -12,8 +12,6 @@ const NewExpense = (props) => {
             ...enteredExpenseData,
             id: Math.random.toString()
         };
-
-        console.log(expenseData);
         
         props.onAddExpense(expenseData); // passing data to App.js via props
 
@@ -21,10 +19,9 @@ const NewExpense = (props) => {
 
     return (
             <div className="new-expense">
-                {/* new custom prop (onSaveExpenseDate) pointing to event listener function */}
                 <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} /> 
             </div>
-        );
+    );
 };
 
 export default NewExpense;
